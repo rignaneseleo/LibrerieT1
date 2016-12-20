@@ -13,6 +13,6 @@
 
 typedef enum { FALSE, TRUE } boolean;
 
-//TODO Inserire qua le definizioni typedef richieste dal problema
+//TODO Definizioni typedef richieste dal problema
 
 #endif

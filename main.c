@@ -8,7 +8,7 @@
 //                   |
 //                COMMON 					(dichiarazione di elementi base comuni in tutto il progetto)
 //                   |
-//                ELEMENT 					(gestione di liste e array di un tipo 'element' generico)
+//                ELEMENT 					(libreria di interfaccia tra le librerie e il loro utilizzo)
 //                   |
 //              -----------
 //              |         |
@@ -22,13 +22,10 @@
 //                   |
 //                  MAIN
 
-
 #include "function.h"
 
-int main() 
+int main()
 {
-
-
-	system("PAUSE");
-	return 0;
+    system("PAUSE");
+    return 0;
 }
