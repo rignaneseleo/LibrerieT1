@@ -4,38 +4,50 @@
 
 #include "element.h"
 
-int elementCompare(element a, element b) //TODO//
-{
-	return a - b;
 
-	//Per numeri e char
-	// return a-b;
-	//Per le stringhe
-	// return strcmp(a, b);
+/* ELEMENT */
+
+int elementCompare(element a, element b) //TODO : in base al criterio dato, definisci quale tra a e b viene prima
+{
+    //Per numeri e char
+    return a - b;
+
+    //Per le stringhe
+    // return strcmp(a, b);
+
+    /*
+	NOTA BENE:
+	La funzione deve restituire:
+	- un numero POSITIVO se a viene prima di b
+	- un numero NEGATIVO se b viene prima di a
+	- 0 se a e b sono uguali
+	*/
 }
 
-boolean elementEquals(element a, element b) //TODO//
+boolean elementEquals(element a, element b) //TODO : in base al criterio dato, definisci se a e b sono condiderate uguali
 {
-	return (a == b); //DA MODIFICARE A SECONDA DI ELEMENT
+    return (a == b); //DA MODIFICARE A SECONDA DI ELEMENT
 }
 
-int type_arrCompare(type_arr a, type_arr b) //TODO//
+
+/* ARRAY */
+
+int type_arrCompare(type_arr a, type_arr b)
 {
 	//Se element e type_arr UGUALI
 	return elementCompare(a, b);
 
 	//Se element e type_arr DIVERSI
-
-	//Per numeri e char
-	// return a-b;
-
-	//Per le stringhe
-	// return strcmp(a, b);
+	//TODO : in base al criterio dato, definisci quale tra a e b viene prima	
 }
 
-boolean type_arrEquals(type_arr a, type_arr b) //TODO//
+boolean type_arrEquals(type_arr a, type_arr b) 
 {
-	return elementEquals(a, b); //DA MODIFICARE A SECONDA DI ELEMENT (se type_arr diverso da element)
+	//Se element e type_arr UGUALI
+	return elementEquals(a, b); 
+	
+	//Se element e type_arr DIVERSI
+	//TODO : in base al criterio dato, definisci se a e b sono considerate uguali
 }
 
 void type_arrSwap(type_arr *a, type_arr *b)
@@ -45,21 +57,35 @@ void type_arrSwap(type_arr *a, type_arr *b)
 	*b = temp;
 }
 
-int type_listCompare(type_list a, type_list b) //TODO//
+void type_arrFPrint(FILE* f, type_arr a) //TODO//
 {
-	//Se element e type_arr UGUALI
-	return elementCompare(a, b);
-
-	//Per i numeri e i char..
-	// return a - b
-	//Per le stringhe
-	// return strcmp(a, b);
-
+	fprintf(f, FORMAT_TA, a); //CAMBIARE LE VARIABILI
 }
 
-boolean type_listEquals(type_list a, type_list b) //TODO//
+void type_arrPrint(type_arr a)
 {
-	return elementEquals(a, b); //DA MODIFICARE A SECONDA DI ELEMENT (se type_arr diverso da element)
+	type_arrFPrint(stdout, a);//stampa in console
+}
+
+
+/* LISTE */
+
+int type_listCompare(type_list a, type_list b) 
+{
+	//Se element e type_list UGUALI
+	return elementCompare(a, b);
+
+	//Se element e type_list DIVERSI
+	//TODO : in base al criterio dato, definisci quale tra a e b viene prima	
+}
+
+boolean type_listEquals(type_list a, type_list b)
+{
+	//Se element e type_list UGUALI
+	return elementEquals(a, b);
+
+	//Se element e type_list DIVERSI
+	//TODO : in base al criterio dato, definisci se a e b sono considerate uguali
 }
 
 void type_listSwap(type_list *a, type_list *b)
@@ -69,21 +95,12 @@ void type_listSwap(type_list *a, type_list *b)
 	*b = temp;
 }
 
-void type_listFPrint(FILE* f, type_list a) //TODO//
+void type_listFPrint(FILE* f, type_list a) 
 {
-	fprintf(f, FORMAT_TL, a); //CAMBIARE LE VARIABILI
-}
-
-void type_arrFPrint(FILE* f, type_arr a) //TODO//
-{
-	fprintf(f, FORMAT_TA, a); //CAMBIARE LE VARIABILI
+	fprintf(f, FORMAT_TL, a);
 }
 
 void type_listPrint(type_list a)
 {
 	type_listFPrint(stdout, a);
-}
-void type_arrPrint(type_arr a)
-{
-	type_arrFPrint(stdout, a);
 }

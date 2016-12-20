@@ -1,20 +1,24 @@
 // Nome:
 // Cognome:
 // Matricola:
+
+//	STRUTTURA DEL PROGETTO CON LE LIBRERIE:
 //
-//                ERRORS
+//                ERRORS 					(gestione degli errori)
 //                   |
-//                COMMON
+//                COMMON 					(dichiarazione di elementi base comuni in tutto il progetto)
 //                   |
-//                ELEMENT
+//                ELEMENT 					(gestione di liste e array di un tipo 'element' generico)
 //                   |
 //              -----------
 //              |         |
-//            ARRAY      LIST
+//            ARRAY 	  |					(gestione degli array)
+//              |         |
+//            	|		LIST 				(gestione delle liste)
 //              |         |
 //              -----------
 //                   |
-//                FUNCTION
+//                FUNCTION					(funzioni utili alla risoluzione del progetto)
 //                   |
 //                  MAIN
 

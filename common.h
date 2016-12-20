@@ -13,6 +13,6 @@
 
 typedef enum { FALSE, TRUE } boolean;
 
-int readField(char buffer[], char sep, FILE *f);
+//TODO Inserire qua le definizioni typedef richieste dal problema
 
 #endif

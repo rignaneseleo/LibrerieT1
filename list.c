@@ -4,6 +4,8 @@
 
 #include "list.h"
 
+/* PRIMITIVE */
+
 list emptyList() 
 {
 	return NULL;
@@ -55,6 +57,8 @@ list cons(type_list el, list l)
 	t->next = l;
 	return t;
 }
+
+/* PRIMITIVE */
 
 void freeList(list l)
 {
@@ -189,7 +193,7 @@ list removeRepetitionList(list l)
 * -----------------------
 * Implementazione di mergeSort per le liste.
 * Non crea una copia della lista ma la ordina e basta
-* Non alloca ne libera alcuna memoria e ha velocitˆ O( n*logn )
+* Non alloca ne libera alcuna memoria e ha velocitï¿½ O( n*logn )
 */
 void sortList(list* l)
 {

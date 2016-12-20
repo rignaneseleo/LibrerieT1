@@ -152,7 +152,8 @@ void bubbleSort(type_arr v[], int n)
 			}
 		}
 			n--;		
-	}}
+	}
+}
 
 void insertSort(type_arr v[], int n)
 {
@@ -170,7 +171,7 @@ void insOrd(type_arr v[], int pos)
 		v[i + 1] = v[i]; /* crea lo spazio */
 		i--;
 	}
-	v[i + 1] = x; /* inserisce l’elemento */
+	v[i + 1] = x; /* inserisce lï¿½elemento */
 }
 
 void merge(type_arr v[], int i1, int i2, int fine, type_arr vout[]) 
@@ -237,6 +238,8 @@ void quickSortR(type_arr a[], int iniz, int fine)
     }
 }
 
+
+//ALTRO
 void showArray(type_arr arr[], int dim)
 {
     int i;

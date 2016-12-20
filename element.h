@@ -7,32 +7,37 @@
 
 #include "common.h"
 
-#define FORMAT_TA "%d" //stringa di formato per type_arr    //TODO//
-#define FORMAT_TL "%d" //stringa di formato per type_list	  //TODO//
+#define FORMAT_TA "%d" //TODO Inserire la stringa di formato per stampare gli elementi di tipo type_arr 
+#define FORMAT_TL "%d" //TODO Inserire stringa di formato per stampare gli elementi di tipo type_list
 
-//DEFINIZIONE DEI TIPI
+/* DEFINIZIONE DEI TIPI */
 
-typedef int element; //Sostituire con il tipo voluto  //TODO//
+typedef int element;       //E' il tipo della variabile base				//TODO Sostituire con il tipo voluto per la variabile base
+typedef element type_arr;  //E' il tipo degli elementi dell'array			//TODO Sostituire con il tipo voluto per l'array
+typedef element type_list; //E' il tipo degli elementi value della lista	//TODO Sostituire con il tipo voluto per la lista
 
-typedef element type_arr; //sostituire con il tipo voluto  //TODO//
-typedef element type_list; //sostituire con il tipo voluto  //TODO//
 
-//ELEMENT
-int elementCompare(element a, element b);
-boolean elementEquals(element a, element b);
+/* ELEMENT */
 
-//ARRAY
-int type_arrCompare(type_arr a, type_arr b);
-boolean type_arrEquals(type_arr a, type_arr b);
-void type_arrSwap(type_arr *a, type_arr *b);
-void type_arrPrint(type_arr a);
-void type_arrFPrint(FILE* stream, type_arr a);
+int elementCompare(element a, element b);    //Definisce quale tra le due variabili di tipo element 'viene prima' (non è sempre detto che sia la maggiore, dipende dal criterio)
+boolean elementEquals(element a, element b); //Dati due variabili di tipo element, restituisce true se le due sono considerate uguali
 
-//LISTE
-int type_listCompare(type_list a, type_list b);
-boolean type_listEquals(type_list a, type_list b);
-void type_listSwap(type_list *a, type_list *b);
-void type_listPrint(type_list a);
-void type_listFPrint(FILE* stream, type_list a);
 
-#endif 
+/* ARRAY */
+
+int type_arrCompare(type_arr a, type_arr b);// confronto tra due elementi di tipo type_arr
+boolean type_arrEquals(type_arr a, type_arr b);// verifico se due elementi di tipo type_arr sono uguali
+void type_arrSwap(type_arr *a, type_arr *b);//scambio i puntatori a due elementi type_arr
+void type_arrPrint(type_arr a);//stampo un elemento di tipo type_arr
+void type_arrFPrint(FILE* stream, type_arr a);//stampo a file un elemento di tipo type_arr
+
+
+/* LISTE */
+
+int type_listCompare(type_list a, type_list b);// confronto tra due elementi di tipo type_list
+boolean type_listEquals(type_list a, type_list b);// verifico se due elementi di tipo type_list sono uguali
+void type_listSwap(type_list *a, type_list *b);//scambio i puntatori a due elementi type_list
+void type_listPrint(type_list a);//stampo un elemento di tipo type_list
+void type_listFPrint(FILE* stream, type_list a);//stampo a file un elemento di tipo type_list
+
+#endif

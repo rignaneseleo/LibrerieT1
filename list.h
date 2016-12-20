@@ -7,6 +7,8 @@
 #ifndef LIST_H
 #define LIST_H
 
+#define FORMAT_TL "%d" //stringa di formato per stampare gli elementi della lista di tipo type_list	  //TODO//
+
 typedef struct list_element {
 	type_list value;
 	struct list_element *next;
@@ -15,16 +17,19 @@ typedef struct list_element {
 typedef node *list;
 
 //PRIMITIVE
+
 list emptyList(); //Restituisce lista vuota
 boolean empty(list l); //Verifica se lista vuota
 type_list head(list l); //Restituisce il valore del primo elemento della lista
 list tail(list l); //Restituisce un puntatore alla coda della lista
 list cons(type_list el, list l); //Inserisce il valore el in testa alla lista l
-void freeList(list l); //Dealloca la memoria della lista
+
 
 //NON PRIMITIVE
+
+void freeList(list l); //Dealloca la memoria della lista
 void showList(list l); //Stampa la lista
-boolean inList(type_list el, list l); //Verifica se l'elemento el è presente nella lista
+boolean inList(type_list el, list l); //Verifica se l'elemento el ï¿½ presente nella lista
 int lengthList(list l); //Restituisce il numero di nodi della lista
 list copyList(list l); //Restituisce una copia della lista l
 list appendList(list l1, list l2); //Concatena la lista l2 alla lista l1
@@ -36,6 +41,7 @@ list diffList(list l1, list l2);//Restituisce una nuova lista contenente i valor
 list removeRepetitionList(list l);//Restituisce una nuova lista senza ripetizioni
 
 //ORDINAMENTO
+
 void sortList(list* l); //Funzione da utilizzare per l'ordinamento di una lista//////////ATTENZIONE passare indirizzo con &
 list mergeList(list a, list b); //Funzioni di appoggio per sortList
 void splitList(list l, list* prima, list* seconda); //Funzioni di appoggio per sortList
