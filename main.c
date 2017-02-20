@@ -2,12 +2,24 @@
 // Cognome:
 // Matricola:
 
+#define _CRT_SECURE_NO_WARNINGS //rimuove i warning inutili
+#include <stdio.h>
+#include "function.h"
+
+/*
+Pagina dell'esame:
+http://esamix.labx/
+
+Esami passati:
+http://lia.deis.unibo.it/Courses/FondT1-1516-INF/esami.html
+
+Credits:
+Leonardo Rignanese
+*/
+
+
 //	STRUTTURA DEL PROGETTO CON LE LIBRERIE:
 //
-//                ERRORS 					(gestione degli errori)
-//                   |
-//                COMMON 					(dichiarazione di elementi base comuni in tutto il progetto)
-//                   |
 //                ELEMENT 					(libreria di interfaccia tra le librerie e il loro utilizzo)
 //                   |
 //              -----------
@@ -21,11 +33,15 @@
 //                FUNCTION					(funzioni utili alla risoluzione del progetto)
 //                   |
 //                  MAIN
+//
 
-#include "function.h"
-
-int main()
+int main(int argc, const char *argv[])
 {
-    system("PAUSE");
+    //es1
+
+    //es2
+
+    //es3
+
     return 0;
 }

@@ -2,10 +2,42 @@
 // Cognome:
 // Matricola:
 
+/*
+Credits Librerie:
+Leonardo Rignanese
+*/
+
 #include "array.h"
 
+boolean type_arrEquals(tipoArray el1, tipoArray el2)
+{
+    //TODO restituire TRUE se due elementi sono CONSIDERATI uguali
+    //NB: non necessariamente devono essere IDENTICI!
+    //Es: Se in un array di persone bisogna rimuovere i parenti che hanno lo stesso cognome,
+    //due elementi saranno uguali se hanno lo stesso cognome (il nome non viene considerato)
+    printf("Configurami!\n");
+    return 0;
+}
+int type_arrCompare(tipoArray el1, tipoArray el2)
+{
+    printf("Configurami!\n");
+    if (type_arrEquals(el1, el2))
+        return 0;
+    else
+    {
+        //TODO restituire -1 se el1 viene prima di el2, 0 se e1==e2 e 1 se e2 viene prima di e1
+    }
+    return 0;
+}
+void type_arrSwap(tipoArray *a, tipoArray *b)
+{
+    tipoArray temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 /* RICERCA */
-int searchFirst(type_arr arr[], int dim, type_arr el)
+int searchFirst(tipoArray arr[], int dim, tipoArray el)
 {
     int i;
     for (i = 0; i < dim; i++)
@@ -16,7 +48,7 @@ int searchFirst(type_arr arr[], int dim, type_arr el)
     return -1;
 }
 
-int searchLast(type_arr arr[], int dim, type_arr el)
+int searchLast(tipoArray arr[], int dim, tipoArray el)
 {
     int i;
     for (i = dim - 1; i >= 0; i--)
@@ -27,7 +59,7 @@ int searchLast(type_arr arr[], int dim, type_arr el)
     return -1;
 }
 
-boolean inArray(type_arr arr[], int dim, type_arr el)
+boolean inArray(tipoArray arr[], int dim, tipoArray el)
 {
     int i;
     boolean found = FALSE;
@@ -42,7 +74,7 @@ boolean inArray(type_arr arr[], int dim, type_arr el)
     return found;
 }
 
-int countRecurrance(type_arr arr[], int dim, type_arr el)
+int countRecurrance(tipoArray arr[], int dim, tipoArray el)
 {
     int i, count = 0;
     for (i = 0; i < dim; i++)
@@ -55,7 +87,7 @@ int countRecurrance(type_arr arr[], int dim, type_arr el)
     return count;
 }
 
-int findMax(type_arr arr[], int dim)
+int findMax(tipoArray arr[], int dim)
 {
     int i, posMax = 0;
 
@@ -65,7 +97,7 @@ int findMax(type_arr arr[], int dim)
     return posMax;
 }
 
-int findMin(type_arr arr[], int dim)
+int findMin(tipoArray arr[], int dim)
 {
     int i, posMin = 0;
 
@@ -76,7 +108,7 @@ int findMin(type_arr arr[], int dim)
 }
 
 /* CONFRONTO */
-boolean compareEquals(type_arr arr1[], int dim1, type_arr arr2[], int dim2)
+boolean compareEquals(tipoArray arr1[], int dim1, tipoArray arr2[], int dim2)
 {
     int i;
     boolean uguali = TRUE;
@@ -94,7 +126,7 @@ boolean compareEquals(type_arr arr1[], int dim1, type_arr arr2[], int dim2)
     return uguali;
 }
 
-boolean compareUnordered(type_arr arr1[], int dim1, type_arr arr2[], int dim2)
+boolean compareUnordered(tipoArray arr1[], int dim1, tipoArray arr2[], int dim2)
 {
     boolean *alreadyChecked;
     boolean uguali = TRUE;
@@ -130,7 +162,7 @@ boolean compareUnordered(type_arr arr1[], int dim1, type_arr arr2[], int dim2)
 }
 
 /* ORDINAMENTO */
-void naiveSort(type_arr arr[], int dim)
+void naiveSort(tipoArray arr[], int dim)
 {
     int p;
     while (dim > 1)
@@ -142,7 +174,7 @@ void naiveSort(type_arr arr[], int dim)
     }
 }
 
-void bubbleSort(type_arr v[], int n)
+void bubbleSort(tipoArray v[], int n)
 {
     int i;
     boolean ordinato = FALSE;
@@ -162,17 +194,17 @@ void bubbleSort(type_arr v[], int n)
     }
 }
 
-void insertSort(type_arr v[], int n)
+void insertSort(tipoArray v[], int n)
 {
     int k;
     for (k = 1; k < n; k++)
         insOrd(v, k);
 }
 
-void insOrd(type_arr v[], int pos)
+void insOrd(tipoArray v[], int pos)
 {
     int i = pos - 1;
-    type_arr x = v[pos];
+    tipoArray x = v[pos];
     while (i >= 0 && (type_arrCompare(x, v[i]) < 0))
     {
         v[i + 1] = v[i]; /* crea lo spazio */
@@ -181,7 +213,7 @@ void insOrd(type_arr v[], int pos)
     v[i + 1] = x; /* inserisce l�elemento */
 }
 
-void merge(type_arr v[], int i1, int i2, int fine, type_arr vout[])
+void merge(tipoArray v[], int i1, int i2, int fine, tipoArray vout[])
 {
     int i = i1, j = i2, k = i1;
     while (i <= i2 - 1 && j <= fine)
@@ -206,7 +238,7 @@ void merge(type_arr v[], int i1, int i2, int fine, type_arr vout[])
         v[i] = vout[i];
 }
 
-void mergeSort(type_arr v[], int first, int last, type_arr vout[])
+void mergeSort(tipoArray v[], int first, int last, tipoArray vout[])
 {
     int mid;
     if (first < last)
@@ -218,15 +250,15 @@ void mergeSort(type_arr v[], int first, int last, type_arr vout[])
     }
 }
 
-void quickSort(int a[], int dim)
+void quickSort(tipoArray a[], int dim)
 {
     quickSortR(a, 0, dim - 1);
 }
 
-void quickSortR(type_arr a[], int iniz, int fine)
+void quickSortR(tipoArray a[], int iniz, int fine)
 {
     int i, j, iPivot;
-    type_arr pivot;
+    tipoArray pivot;
 
     if (iniz < fine)
     {
@@ -254,15 +286,5 @@ void quickSortR(type_arr a[], int iniz, int fine)
             quickSortR(a, iniz, iPivot - 1);
         if (iPivot + 1 < fine)
             quickSortR(a, iPivot + 1, fine);
-    }
-}
-
-/* ALTRO */
-void showArray(type_arr arr[], int dim)
-{
-    int i;
-    for (i = 0; i < dim; i++)
-    {
-        type_arrPrint(arr[i]);
     }
 }
